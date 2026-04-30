@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Collection - CBDISTORE</title>
+  <link rel="stylesheet" href="Style.css">
+</head>
+
+<body>
+
+<!-- 🔝 Navbar بسيط -->
+<header class="navbar">
+  <div class="logo">🌸 CBDISTORE</div>
+  <nav>
+    <a href="index.html">Accueil</a>
+    <a href="collection.html">Collection</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+
+<section id="collection">
+  <h2 href="https://st.1001fonts.net/img/txt/b3RmLjcyLjAwMDAwMC5URzlvWlhKaGJpQlRhWE5qWVEuMA/loheran-sisca.regular.webp"
+  class="title">Découvrez nos plus belles fleurs 🌸</h2>
+
+<!-- 🛍️ Products -->
+<section class="products">
+
+  <div class="carde">
+
+  <div class="flowerK">
+    <img src="images/flower1.jpeg" class="active">
+    <img src="images/flower11.jpeg">
+
+    <button class="prev"></button>
+    <button class="next"></button>
+  </div>
+
+  <h3 class="onan">Rose flora</h3>
+  <p class="euro">10€</p>
+
+  <a class="btne" 
+  href="https://wa.me/33753216157?text=Bonjour%20je%20veux%20commander%20rose%20flora"
+  target="_blank">
+  Commander
+  </a>
+  </div>
+
+</section>
+  <section id="collection">
+  <h2 class="title">🌸</h2>
+
+  <section class="products">
+
+  <div class="carde">
+
+  <div class="flowerK">
+     <img src="images/flower3.jpeg"class="active">
+     <img src="images/flower33.jpeg">
+
+    <button class="prev"></button>
+    <button class="next"></button>
+  </div>
+
+  <h3 class="onan">fleur de lys</h3>
+  <p class="euro">10€</p>
+  <a class="btne" 
+  href="https://wa.me/+33753216157?text=Bonjour%20je%20veux%20commander%20Fleur%20de%20lys"
+  target="_blank">
+  Commander
+  </a>
+  </div>
+  </section>
+
+  <section id="collection">
+  <h2 class="title">🌸</h2>
+
+  <section class="products">
+  <div class="carde">
+
+  <div class="flowerK">
+    <img src="images/Masque1.jpeg" class="active">
+    <img src="images/Masque11.jpeg">
+
+    <button class="prev"></button>
+    <button class="next"></button>
+  </div>
+
+  <h3 class="onan">Masque</h3>
+  <p class="euro">10€</p>
+
+  <a class="btne" 
+  href="https://wa.me/+33753216157?text=Bonjour%20je%20veux%20commander%20Masque"
+  target="_blank">
+  Commander
+  </a>
+  </div>
+  </section>
+
+<footer class="footer">
+
+  <div class="footer-container">
+
+    <!-- Contact -->
+    <div class="footer-col">
+      <h3>Nous contacter</h3>
+      <p>Du lundi au vendredi 9h - 18h</p>
+      <p>Samedi 9h - 12h</p>
+      <a href="contact.html">Contactez-nous</a>
+    </div>
+
+    <!-- Commande -->
+    <div class="footer-col">
+      <h3>Votre commande</h3>
+      <a href="#">Suivi livraison</a>
+      <a href="#">Mon compte</a>
+    </div>
+
+    <!-- Social -->
+    <div class="footer-col">
+      <h3>Suivez-nous</h3>
+
+      <div class="icons">
+        <a href="https://www.instagram.com/cbdi_creation" target="_blank">instagram</a>
+        <a href="https://wa.me/+33753216157" target="_blank">whatsapp</a>
+      </div>
+
+    </div>
+
+  </div>
+
+  <p class="copy">© 2026 CBDISTORE</p>
+  <p class="copy" >15eme , 16eme arrondisement | Fleuriste en ligne</p>
+
+</footer>
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <span class="close">&times;</span>
+
+  <img class="lightbox-img" id="lightbox-img">
+
+</div>
+<script>
+let currentImages = [];
+let currentIndex = 0;
+
+document.querySelectorAll('.flowerK').forEach(slider => {
+  let imgs = slider.querySelectorAll('img');
+
+  imgs.forEach((img, i) => {
+    img.addEventListener('click', () => {
+      currentImages = imgs;
+      currentIndex = i;
+      showLightbox();
+    });
+  });
+});
+
+function showLightbox() {
+  document.getElementById('lightbox').style.display = 'flex';
+  document.getElementById('lightbox-img').src = currentImages[currentIndex].src;
+}
+
+document.querySelector('.close').onclick = () => {
+  document.getElementById('lightbox').style.display = 'none';
+};
+
+document.querySelector('.next').onclick = () => {
+  currentIndex = (currentIndex + 1) % currentImages.length;
+  showLightbox();
+};
+
+document.querySelector('.prev').onclick = () => {
+  currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
+  showLightbox();
+};
+document.querySelectorAll('.flowerK').forEach(slider => {
+  let images = slider.querySelectorAll('img');
+  let index = 0;
+
+  slider.querySelector('.next').onclick = () => {
+    images[index].classList.remove('active');
+    index = (index + 1) % images.length;
+    images[index].classList.add('active');
+  };
+
+  slider.querySelector('.prev').onclick = () => {
+    images[index].classList.remove('active');
+    index = (index - 1 + images.length) % images.length;
+    images[index].classList.add('active');
+  };
+});
+</script>
+</body>
+</html>

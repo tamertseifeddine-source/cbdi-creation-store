@@ -1,0 +1,275 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial;
+}
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: white;
+  position: relative;
+}
+
+/* الخلفية */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background: url("images/flower\ fond\ decran.jpeg") center/cover no-repeat;
+  z-index: -1;
+}
+
+/* طبقة غامقة باش الكتابة تبان */
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  z-index: -1;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 40px;
+  background: palevioletred;
+  color: white;
+  position: sticky;
+  width: 100%;
+  backdrop-filter: blur(10px);
+  animation: slideDown 1s ease;
+  z-index: 1000;
+}
+
+.navbar a {
+  color: white;
+  margin-left: 20px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.navbar a:hover {
+  color: blue;
+}
+
+.title {
+  text-align: center;
+  font-size: 32px;
+  margin: 40px 0;
+  color: white;
+}  
+
+/* Products Grid */
+.products {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 20px;
+  flex-direction: column;
+  align-items:center;
+}
+
+/* Card */
+.carde {
+  background: white;
+  width: 500px;
+  margin: 50px;
+  padding: 20px;
+  border-radius: 50px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+.onan {
+  color: black;
+  padding: 2%;
+}
+
+.euro {
+  color: black;
+  width: 100%;
+  padding: 2%;
+  font-weight: bold;
+}
+
+.carde:hover {
+  transform: translateY(-10px);
+}
+
+/* Image */
+.carde img {
+  width: 100%;
+  border-radius: 10px;
+  font-size: 18px;
+}
+h2 {
+  font-family: 'Courier New', Courier, monospace;
+}
+
+/* Button */
+.btne {
+  display: inline-block;
+  margin-top: 10px;
+  background: palevioletred;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btne:hover {
+  background: rgb(240, 5, 83);
+  transform: scale(1.05);
+}
+/* SLIDER */
+.flowerK {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+}
+
+.flowerK img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: none;
+  border-radius: 50px;
+}
+
+.flowerK img.active {
+  display: block;
+}
+
+/* buttons */
+.flowerK button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: palevioletred(0,0,0,0.4);
+  color: palevioletred(0, 0, 0);
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.prev { left: 10px; color: palevioletred; }
+.next { right: 10px; color:palevioletred; }
+
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 10px;
+}
+
+.lightbox .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 30px;
+  color: palevioletred;
+  cursor: pointer;
+}
+
+/* buttons */
+.lightbox button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: red(255,255,255,0.2);
+  color: palevioletred;
+  border: none;
+  font-size: 30px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.lightbox .prev { left: 20px; color: palevioletred;}
+.lightbox .next { right: 20px;color: palevioletred; }
+.footer {
+  background: palevioletred;
+  padding: 40px 20px;
+}
+footer {
+  text-align: center;
+  padding: 20px;
+  margin-top: 50px;
+  background: #111;
+  color: white;
+  width: 100%;
+}
+.footer {
+  background: palevioletred;
+  padding: 40px , 20px;
+  width: 100%;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.footer-col {
+  max-width: 250px;
+  margin: 10px;
+}
+
+.footer-col h3 {
+  margin-bottom: 10px;
+  color:white;
+}
+
+.footer-col a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  margin: 5px 0;
+  transition: 0.3s;
+}
+
+.footer-col a:hover {
+  color: #ff4d6d;
+}
+
+/* Icons */
+.icons {
+  display: flex;
+  gap: 40px;
+  margin-top: 10px;
+}
+.icons a:hover {
+  color: #ff4d6d;
+}
+
+/* Copy */
+.copy {
+  text-align: center;
+  margin-top: 20px;
+  color :white ;
+}
