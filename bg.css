@@ -34,7 +34,7 @@
 .hero {
   height: 100vh;
   background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),
-  url("images/flower\ fond\ decran.jpeg") center/cover;
+  url("flower\ fond\ decran.jpeg") center/cover;
   display: flex;
   justify-content: center;
   align-items: center;
